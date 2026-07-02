@@ -1,6 +1,4 @@
-close all, clear all, clc
-%%
-load('SUBS2.mat'), load sensor_names,
+load('All_data.mat'), load sensor_names,
 NAMES = fieldnames(SUBS2),
 Fs=300; 
 
