@@ -1,4 +1,5 @@
 load('All_data.mat'), load sensor_names,
+NAMES = fieldnames(All_data),
 Fs=300; 
 
 %% Part I: reading the STs
@@ -6,8 +7,8 @@ STs=[]; valence=[]; arousal=[];liking=[]; Labels_stim=[]; IDs=[];Bas_STs1=[];
 
 for ii=1:42
 Subject_STs=eval(char(strcat('All_data.',NAMES(ii),'.trials')));Subject_Baselines=eval(char(strcat('All_data.',NAMES(ii),'.baselines')));
-Subject_labels=table2array(eval(char(strcat('SUBS2.',NAMES(ii),'.labels'))));
-Stim_labels_visual=eval(char(strcat('SUBS2.',NAMES(ii),'.trial_permutation.visual')));
+Subject_labels=table2array(eval(char(strcat('All_data.',NAMES(ii),'.labels'))));
+Stim_labels_visual=eval(char(strcat('All_data.',NAMES(ii),'.trial_permutation.visual')));
 
 % Ave Re-Reference
 for i_trial=1:48, 
