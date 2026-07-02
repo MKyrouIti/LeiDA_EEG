@@ -1,5 +1,4 @@
 load('All_data.mat'), load sensor_names,
-NAMES = fieldnames(SUBS2),
 Fs=300; 
 
 %% Part I: reading the STs
@@ -31,7 +30,7 @@ end
 
 time=[1:size(STs,2)]*(1/Fs);
  
-%%  PART II :  deriving average Histograms , prototypical of each state : "Like"  and "Dislike"
+%%  PART II :  deriving average Histograms, prototypical of each state: "Like"  and "Dislike"
 for ii=1:16; 
     Range_liking(ii)=iqr(liking(find(Labels_stim==ii))); 
 end
